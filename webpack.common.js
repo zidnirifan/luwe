@@ -11,16 +11,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
+            loader: 'style-loader!css-loader!sass-loader',
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+            'file-loader',
+        ],
+    },
     ],
   },
   plugins: [
