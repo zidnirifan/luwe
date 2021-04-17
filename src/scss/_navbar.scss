@@ -1,0 +1,96 @@
+@use 'variable' as *;
+
+nav-bar {
+    .navbar {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+
+        .menu-btn {
+            place-self: center end;
+            cursor: pointer;
+            span {
+                display: block;
+                width: 30px;
+                height: 5px;
+                background-color: black;
+                margin: 5px 0;
+            }
+        }
+        .menu-list {
+            display: none;
+        }
+    }
+    
+    .sidenav {
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        right: -50%;
+        top: 0;
+        background-color: white;
+        padding-top: 30px;
+        z-index: 999;
+        transition: 0.5s;
+
+        &.active {
+            right: 0;
+            transition: 0.5s;
+        }
+
+        li {
+            list-style-type: none;
+            text-align: right;
+            padding-right: 20%;
+            margin-bottom: 20px;
+            a.menu-item {
+                text-decoration: none;
+                color: $primary-color;
+            }
+        }
+    }
+    .sidenav-overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav-bar {
+        .navbar{
+            width: 80%;
+        }
+        .menu-btn {
+            display: none;
+        }
+        .menu-list {
+            place-self: center end;
+            width: 400px;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr;
+            li {
+                list-style-type: none;
+                justify-self: end;
+                a.menu-item {
+                    text-decoration: none;
+                    color: $primary-color;
+                    font-size: 1.2rem;
+                    &:hover{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

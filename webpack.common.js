@@ -14,16 +14,20 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: 'style-loader!css-loader!sass-loader',
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
           },
         ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
-        use: [
-            'file-loader',
-        ],
-    },
+        use: ['file-loader'],
+      },
     ],
   },
   plugins: [
