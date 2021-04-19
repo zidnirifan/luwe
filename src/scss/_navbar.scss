@@ -10,10 +10,14 @@ nav-bar {
         .menu-btn {
             place-self: center end;
             cursor: pointer;
+            background-color: transparent;
+            border: none;
+            width: 44px;
+            height: 44px;
             span {
                 display: block;
-                width: 30px;
-                height: 5px;
+                width: 44px;
+                height: 7px;
                 background-color: black;
                 margin: 5px 0;
             }
@@ -43,11 +47,13 @@ nav-bar {
             list-style-type: none;
             text-align: right;
             padding-right: 20%;
-            margin-bottom: 20px;
             a.menu-item {
+                display: block;
+                height: 60px;
                 text-decoration: none;
                 color: $primary-color;
                 font-size: 1.3rem;
+                font-weight: 500;
             }
         }
     }
@@ -80,13 +86,19 @@ nav-bar {
             width: 400px;
             display: grid !important;
             grid-template-columns: 1fr 1fr 1fr;
+            height: 50px;
             li {
                 list-style-type: none;
                 justify-self: end;
+                height: 100%;
                 a.menu-item {
                     text-decoration: none;
+                    display: block;
+                    line-height: 50px;
+                    height: 50px;
                     color: $primary-color;
                     font-size: 1.2rem;
+                    font-weight: 500;
                     &:hover{
                         font-weight: bold;
                     }

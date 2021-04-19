@@ -22,11 +22,11 @@ class Navbar extends HTMLElement {
     this.innerHTML = /*html*/ `
             <nav class="navbar">
                 <a href="/" class="logo"><img src="${logo}" alt="logo luwe"/></a>
-                <a class="menu-btn">
+                <button class="menu-btn">
                     <span></span>
                     <span></span>
                     <span></span>
-                </a>
+                </button>
                 <ul class="menu-list">
                     <li><a class="menu-item" href="/">Home</a></li>
                     <li><a class="menu-item" href="#">Favorite</a></li>
