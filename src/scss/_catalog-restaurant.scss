@@ -65,6 +65,11 @@ list-restaurant {
         grid-auto-flow: column;
         gap: 20px 10px;
         overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         restaurant-card {
             width: 250px;
         }

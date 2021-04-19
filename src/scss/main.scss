@@ -20,3 +20,15 @@ footer {
     height: 40px;
     text-align: center;
 }
+
+.skip-link{
+    background-color: rgb(0, 158, 0);
+    padding: 7px;
+    color: white;
+    position: absolute;
+    top: -50px;
+    left: 80px;
+    &:focus {
+        top: 0;
+    }
+}
