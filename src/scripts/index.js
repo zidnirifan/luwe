@@ -3,19 +3,38 @@ import './../scss/main.scss';
 import './../component/navbar';
 import './../component/hero';
 import './../component/listRestaurant';
-import restaurants from './../DATA.json';
-
-console.log(restaurants.restaurants);
+import data from './../DATA.json';
 
 const navBar = document.createElement('nav-bar');
 const hero = document.createElement('hero-element');
-const listRestaurant = document.createElement('list-restaurant');
 
 document.querySelector('header').appendChild(navBar);
 document.querySelector('.hero').appendChild(hero);
 
-listRestaurant.restaurants = restaurants.restaurants;
-document.querySelector('main').appendChild(listRestaurant);
+const popular = () => {
+  const listRestaurant = document.createElement('list-restaurant');
+  listRestaurant.className = 'popular';
+
+  const title = `<h2 class="category">Populer</h2>`;
+
+  listRestaurant.restaurants = data.popular;
+  document.querySelector('main').innerHTML += title;
+  document.querySelector('main').appendChild(listRestaurant);
+};
+
+const allRestaurant = () => {
+  const listRestaurant = document.createElement('list-restaurant');
+  listRestaurant.className = 'all-restaurant';
+
+  const title = `<h2 class="category">Semua Restoran</h2>`;
+
+  listRestaurant.restaurants = data.restaurants;
+  document.querySelector('main').innerHTML += title;
+  document.querySelector('main').appendChild(listRestaurant);
+};
+
+popular();
+allRestaurant();
 
 const sidebarActive = () => {
   document.querySelectorAll('.sidenav, .sidenav-overlay').forEach((e) => {

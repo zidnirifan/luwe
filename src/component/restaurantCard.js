@@ -10,12 +10,15 @@ class RestaurantCard extends HTMLElement {
 
   render() {
     this.innerHTML = /*html*/ `
-            <div class="city">Kota ${this._restaurant.city}</div>    
+            <div class="rating">Rating: ${this._restaurant.rating}</div>    
             <div class="card-thumbnail">
-                <img src="${this._restaurant.pictureId}" alt=""/>
+                <img src="${this._restaurant.pictureId}" alt="${this._restaurant.name}"/>
             </div>
-            <h3 class="card-title">${this._restaurant.name}</h3>
-            <p class="card-description">${this._restaurant.description}</p>
+            <div class="card-content">
+              <h3 class="card-title">${this._restaurant.name}</h3>
+              <p class="city">Kota ${this._restaurant.city}</p>
+              <p class="card-description">${this._restaurant.description}</p>
+            </div>
         `;
   }
 }

@@ -28,15 +28,15 @@ class Navbar extends HTMLElement {
                     <span></span>
                 </a>
                 <ul class="menu-list">
-                    <li><a class="menu-item" href="#">Home</a></li>
+                    <li><a class="menu-item" href="/">Home</a></li>
                     <li><a class="menu-item" href="#">Favorite</a></li>
-                    <li><a class="menu-item" href="#">About Us</a></li>
+                    <li><a class="menu-item" href="https://www.linkedin.com/in/zidnirifan/">About Us</a></li>
                 </ul>
               </nav>
                 <ul class="sidenav">
-                    <li><a class="menu-item" href="#">Home</a></li>
+                    <li><a class="menu-item" href="/">Home</a></li>
                     <li><a class="menu-item" href="#">Favorite</a></li>
-                    <li><a class="menu-item" href="#">About Us</a></li>
+                    <li><a class="menu-item" href="https://www.linkedin.com/in/zidnirifan/">About Us</a></li>
                 </ul>
             <div class="sidenav-overlay"></div>
         `;
