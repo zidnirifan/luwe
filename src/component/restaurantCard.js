@@ -1,8 +1,4 @@
 class RestaurantCard extends HTMLElement {
-  // connectedCallback() {
-  //   this.render();
-  // }
-
   set restaurant(restaurant) {
     this._restaurant = restaurant;
     this.render();
