@@ -111,3 +111,11 @@ nav-bar {
     }
   }
 }
+
+@media screen and (min-width: 1200px) {
+  nav-bar {
+    .navbar {
+      width: 1080px;
+    }
+  }
+}
