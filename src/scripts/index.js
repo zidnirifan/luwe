@@ -11,30 +11,27 @@ const hero = document.createElement('hero-element');
 document.querySelector('header').appendChild(navBar);
 document.querySelector('.hero').appendChild(hero);
 
-const popular = () => {
+const createListRestaurant = ({ title, data, className }) => {
   const listRestaurant = document.createElement('list-restaurant');
-  listRestaurant.className = 'popular';
+  listRestaurant.className = className;
 
-  const title = `<h2 class="category">Populer</h2>`;
-
-  listRestaurant.restaurants = data.popular;
-  document.querySelector('main').innerHTML += title;
+  listRestaurant.restaurants = data;
+  document.querySelector(
+    'main'
+  ).innerHTML += `<h2 class="category">${title}</h2>`;
   document.querySelector('main').appendChild(listRestaurant);
 };
 
-const allRestaurant = () => {
-  const listRestaurant = document.createElement('list-restaurant');
-  listRestaurant.className = 'all-restaurant';
-
-  const title = `<h2 class="category">Semua Restoran</h2>`;
-
-  listRestaurant.restaurants = data.restaurants;
-  document.querySelector('main').innerHTML += title;
-  document.querySelector('main').appendChild(listRestaurant);
-};
-
-popular();
-allRestaurant();
+createListRestaurant({
+  title: 'Populer',
+  data: data.popular,
+  className: 'popular',
+});
+createListRestaurant({
+  title: 'Semua Restoran',
+  data: data.restaurants,
+  className: 'all-restaurant',
+});
 
 const openSidebar = () => {
   document.querySelectorAll('.sidenav, .sidenav-overlay').forEach((e) => {
