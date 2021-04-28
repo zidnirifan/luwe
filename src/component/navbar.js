@@ -5,17 +5,14 @@ class Navbar extends HTMLElement {
     this.render();
   }
 
-  set clickEvent(event) {
-    this._clickEvent = event;
+  set openSidebar(event) {
+    this._openSidebar = event;
     this.render();
-    const closeSidebar = () => {
-      document.querySelectorAll('.active').forEach((e) => {
-        e.classList.remove('active');
-      });
-    };
-    document
-      .querySelector('.sidenav-overlay')
-      .addEventListener('click', closeSidebar);
+  }
+
+  set closeSidebar(event) {
+    this._closeSidebar = event;
+    this.render();
   }
 
   render() {
@@ -40,7 +37,13 @@ class Navbar extends HTMLElement {
                 </ul>
             <div class="sidenav-overlay"></div>
         `;
-    this.querySelector('.menu-btn').addEventListener('click', this._clickEvent);
+    this.querySelector('.menu-btn').addEventListener(
+      'click',
+      this._openSidebar
+    );
+    document
+      .querySelector('.sidenav-overlay')
+      .addEventListener('click', this._closeSidebar);
   }
 }
 

@@ -36,11 +36,17 @@ const allRestaurant = () => {
 popular();
 allRestaurant();
 
-const sidebarActive = () => {
+const openSidebar = () => {
   document.querySelectorAll('.sidenav, .sidenav-overlay').forEach((e) => {
     e.classList.add('active');
   });
 };
 
-navBar.clickEvent = sidebarActive;
+const closeSidebar = () => {
+  document.querySelectorAll('.active').forEach((e) => {
+    e.classList.remove('active');
+  });
+};
 
+navBar.openSidebar = openSidebar;
+navBar.closeSidebar = closeSidebar;
