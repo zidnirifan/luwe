@@ -1,4 +1,4 @@
-import logo from './../public/images/logo.svg';
+import logo from '../public/images/logo.svg';
 
 class Navbar extends HTMLElement {
   connectedCallback() {
@@ -16,7 +16,7 @@ class Navbar extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/ `
+    this.innerHTML = /* html */ `
             <nav class="navbar">
                 <a href="/" class="logo"><img src="${logo}" alt="logo luwe"/></a>
                 <button class="menu-btn" aria-label="menu button">
@@ -39,7 +39,7 @@ class Navbar extends HTMLElement {
         `;
     this.querySelector('.menu-btn').addEventListener(
       'click',
-      this._openSidebar
+      this._openSidebar,
     );
     document
       .querySelector('.sidenav-overlay')

@@ -5,7 +5,7 @@ class RestaurantCard extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/ `
+    this.innerHTML = /* html */ `
             <div class="rating">Rating: ${this._restaurant.rating}</div>    
             <div class="card-thumbnail">
                 <img src="${this._restaurant.pictureId}" alt="${this._restaurant.name}"/>
