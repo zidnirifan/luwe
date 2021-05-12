@@ -44,7 +44,7 @@ nav-bar {
 
     &.active {
       right: 0;
-      transition: 0.5s;
+      transition: 0.3s;
     }
 
     li {
@@ -63,6 +63,7 @@ nav-bar {
   }
   .sidenav-overlay {
     position: fixed;
+    z-index: 99;
     width: 100%;
     height: 100%;
     top: 0;
