@@ -1,6 +1,6 @@
-import fullStarImg from '../public/images/star.svg';
-import halfStarImg from '../public/images/half-star.svg';
-import greyStarImg from '../public/images/grey-star.svg';
+import fullStarImg from '../../public/images/star.svg';
+import halfStarImg from '../../public/images/half-star.svg';
+import greyStarImg from '../../public/images/grey-star.svg';
 
 const createStar = (value) => {
   const fullStar = `<img src="${fullStarImg}" class="star"/>`;

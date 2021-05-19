@@ -1,4 +1,4 @@
-import logo from '../public/images/logo.svg';
+import logo from '../../public/images/logo.svg';
 
 class Navbar extends HTMLElement {
   connectedCallback() {

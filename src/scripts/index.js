@@ -1,8 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../scss/main.scss';
-import '../component/navbar';
-import '../component/hero';
-import '../component/listRestaurant';
+import './component/navbar';
+import './component/hero';
+import './component/listRestaurant';
 import data from '../DATA.json';
 
 const navBar = document.createElement('nav-bar');
