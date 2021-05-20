@@ -7,7 +7,7 @@
   margin-top: 1rem;
 }
 
-list-restaurant {
+list-restaurants {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr;
@@ -64,7 +64,7 @@ list-restaurant {
 }
 
 @media screen and (min-width: 480px) {
-  list-restaurant {
+  list-restaurants {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -75,19 +75,19 @@ list-restaurant {
     margin-bottom: 1rem;
     font-size: 1.6rem;
   }
-  list-restaurant {
+  list-restaurants {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (min-width: 1024px) {
-  list-restaurant {
+  list-restaurants {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  list-restaurant {
+  list-restaurants {
     width: 1080px;
     margin: auto;
   }

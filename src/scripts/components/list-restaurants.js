@@ -1,8 +1,8 @@
-import './restaurantCard';
+import './restaurant-card';
 
-class ListRestaurant extends HTMLElement {
-  set restaurants(restaurants) {
-    this._restaurants = restaurants;
+class ListRestaurants extends HTMLElement {
+  set data(data) {
+    this._restaurants = data;
     this.render();
   }
 
@@ -16,4 +16,4 @@ class ListRestaurant extends HTMLElement {
   }
 }
 
-customElements.define('list-restaurant', ListRestaurant);
+customElements.define('list-restaurants', ListRestaurants);

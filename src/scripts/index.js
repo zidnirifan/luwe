@@ -1,6 +1,6 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../scss/main.scss';
-import './component/navbar';
+import './components/nav-bar';
 import './routes/routes';
 
 const navBar = document.createElement('nav-bar');

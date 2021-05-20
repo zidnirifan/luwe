@@ -1,15 +1,15 @@
-import '../component/hero';
-import '../component/listRestaurant';
+import '../components/hero-component';
+import '../components/list-restaurants';
 import data from '../../DATA.json';
 
 const home = () => {
-  const listRestaurant = document.createElement('list-restaurant');
-  listRestaurant.restaurants = data.restaurants;
+  const listRestaurants = document.createElement('list-restaurants');
+  listRestaurants.data = data.restaurants;
 
   return /* html */ `
-    <hero-element></hero-element>
+    <hero-component></hero-component>
     <h2 class="section-title">Semua Restoran</h2>
-    ${listRestaurant.outerHTML}
+    ${listRestaurants.outerHTML}
   `;
 };
 
