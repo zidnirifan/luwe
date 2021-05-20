@@ -37,13 +37,17 @@ class Navbar extends HTMLElement {
                 </ul>
             <div class="sidenav-overlay"></div>
         `;
-    this.querySelector('.menu-btn').addEventListener(
-      'click',
-      this._openSidebar,
-    );
-    document
-      .querySelector('.sidenav-overlay')
-      .addEventListener('click', this._closeSidebar);
+
+    const menuBtn = this.querySelector('.menu-btn');
+    menuBtn.addEventListener('click', this._openSidebar);
+
+    const overlay = this.querySelector('.sidenav-overlay');
+    overlay.addEventListener('click', this._closeSidebar);
+
+    const menuSidenav = this.querySelectorAll('.sidenav .menu-item');
+    menuSidenav.forEach((menuItem) => {
+      menuItem.addEventListener('click', this._closeSidebar);
+    });
   }
 }
 

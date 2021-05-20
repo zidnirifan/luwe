@@ -8,7 +8,7 @@ const home = () => {
 
   return /* html */ `
     <hero-component></hero-component>
-    <h2 class="section-title">Semua Restoran</h2>
+    <h2 class="section-title">Daftar Restoran</h2>
     ${listRestaurants.outerHTML}
   `;
 };
