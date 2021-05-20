@@ -1,6 +1,6 @@
 @use 'variable' as *;
 
-.category {
+.section-title {
   font-weight: 600;
   font-size: 1.4rem;
   padding-left: 0.7rem;
@@ -63,22 +63,6 @@ list-restaurant {
   }
 }
 
-@media screen and (max-width: 768px) {
-  list-restaurant.popular {
-    grid-auto-flow: column;
-    gap: 20px 10px;
-    overflow: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    restaurant-card {
-      width: 250px;
-    }
-  }
-}
-
 @media screen and (min-width: 480px) {
   list-restaurant {
     grid-template-columns: repeat(2, 1fr);
@@ -86,7 +70,7 @@ list-restaurant {
 }
 
 @media screen and (min-width: 768px) {
-  .category {
+  .section-title {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 1.6rem;
