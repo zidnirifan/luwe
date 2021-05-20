@@ -1,8 +1,8 @@
 const router = (path, page) => {
-  const loadContent = () => {
+  const loadContent = async () => {
     if (window.location.hash === path) {
       const main = document.querySelector('main');
-      main.innerHTML = page();
+      main.innerHTML = await page();
     }
   };
 

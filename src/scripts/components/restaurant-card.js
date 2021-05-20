@@ -1,4 +1,5 @@
 import createStar from '../elements/star';
+import CONFIG from '../global/config';
 
 class RestaurantCard extends HTMLElement {
   set restaurant(restaurant) {
@@ -10,8 +11,10 @@ class RestaurantCard extends HTMLElement {
     this.innerHTML = /* html */ `
             <div class="city">${this._restaurant.city}</div>    
             <div class="card-thumbnail">
-                <img src="${this._restaurant.pictureId}" 
-                  alt="${this._restaurant.name}"/>
+                <img 
+                  src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" 
+                  alt="${this._restaurant.name}"
+                />
             </div>
             <div class="card-content">
               <h3 class="card-title">${this._restaurant.name}</h3>

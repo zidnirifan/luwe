@@ -1,10 +1,12 @@
 import '../components/hero-component';
 import '../components/list-restaurants';
-import data from '../../DATA.json';
+import ApiServices from '../services/api';
 
-const home = () => {
+const home = async () => {
+  const restaurants = await ApiServices.listRestaurants();
+
   const listRestaurants = document.createElement('list-restaurants');
-  listRestaurants.data = data.restaurants;
+  listRestaurants.data = restaurants.restaurants;
 
   return /* html */ `
     <hero-component></hero-component>
