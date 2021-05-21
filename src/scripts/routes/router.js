@@ -1,9 +1,17 @@
-const router = (path, page) => {
-  const loadContent = async () => {
-    if (window.location.hash === path) {
-      const main = document.querySelector('main');
-      main.innerHTML = await page();
-    }
+const notFound = () => 'Not Found';
+
+const router = (routeTable, pageNotFound = notFound) => {
+  const urls = Object.getOwnPropertyNames(routeTable);
+
+  const loadContent = () => {
+    const main = document.querySelector('main');
+    urls.forEach(async (url) => {
+      if (window.location.hash === url) {
+        main.innerHTML = await routeTable[url]();
+      } else {
+        main.innerHTML = pageNotFound();
+      }
+    });
   };
 
   window.addEventListener('hashchange', () => {

@@ -2,7 +2,12 @@ import router from './router';
 import home from '../pages/home';
 import about from '../pages/about';
 import favorite from '../pages/favorite';
+import notFound from '../pages/404';
 
-router('', home);
-router('#/about', about);
-router('#/favorite', favorite);
+const routeTable = {
+  '': home,
+  '#/favorite': favorite,
+  '#/about': about,
+};
+
+router(routeTable, notFound);
