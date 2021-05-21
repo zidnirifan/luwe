@@ -1,9 +1,9 @@
 import '../components/hero-component';
 import '../components/list-restaurants';
-import ApiServices from '../services/api';
+import apiService from '../services/api';
 
 const home = async () => {
-  const restaurants = await ApiServices.listRestaurants();
+  const restaurants = await apiService.listRestaurants();
 
   const listRestaurants = document.createElement('list-restaurants');
   listRestaurants.data = restaurants.restaurants;

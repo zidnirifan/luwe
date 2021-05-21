@@ -1,11 +1,17 @@
 import API_ENDPOINT from '../global/api-endpoint';
 
-class ApiService {
-  static async listRestaurants() {
-    const response = await fetch(API_ENDPOINT.LIST_RESTAURANTS);
-    const responseJson = response.json();
-    return responseJson;
-  }
-}
+const apiService = {
+  listRestaurants: async () => {
+    try {
+      const response = await fetch(API_ENDPOINT.LIST_RESTAURANTS);
+      const responseJson = response.json();
+      return responseJson;
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      return error;
+    }
+  },
+};
 
-export default ApiService;
+export default apiService;
