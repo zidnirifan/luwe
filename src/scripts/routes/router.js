@@ -1,6 +1,6 @@
-const notFound = () => 'Not Found';
+import loading from '../elements/loading';
 
-const router = (routeTable, pageNotFound = notFound) => {
+const router = (routeTable, pageNotFound) => {
   const urls = Object.getOwnPropertyNames(routeTable);
 
   const loadContent = async () => {
@@ -8,7 +8,7 @@ const router = (routeTable, pageNotFound = notFound) => {
     const url = urls.filter((e) => window.location.hash === e)[0];
 
     if (window.location.hash === url) {
-      main.innerHTML = '<h1>Loading</h1>';
+      main.innerHTML = loading();
       main.innerHTML = await routeTable[url]();
     } else {
       main.innerHTML = pageNotFound();
