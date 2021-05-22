@@ -2,6 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -57,19 +58,22 @@ module.exports = {
       inject: true,
       ios: {
         'apple-mobile-web-app-title': 'Luwe',
-        'apple-mobile-web-app-status-bar-style': '48811a',
+        'apple-mobile-web-app-status-bar-style': '#48811a',
       },
       icons: [
         {
-          src: path.resolve('src/public/images/icons/icon.png'),
+          src: path.resolve(__dirname, 'src/public/images/icons/icon.png'),
           sizes: [72, 96, 128, 192, 256, 384, 512],
         },
         {
-          src: path.resolve('src/public/images/icons/ios-icon.png'),
+          src: path.resolve(__dirname, 'src/public/images/icons/ios-icon.png'),
           size: 192,
           ios: true,
         },
       ],
+    }),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
   ],
 };
