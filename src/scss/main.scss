@@ -30,6 +30,7 @@ footer {
   color: white;
   position: absolute;
   top: -50px;
+  z-index: 99;
   left: 80px;
   &:focus {
     top: 0;
