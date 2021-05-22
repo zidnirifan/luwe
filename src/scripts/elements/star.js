@@ -12,8 +12,8 @@ const createStar = (value) => {
   for (let i = 1; i <= value; i += 1) starComponent += fullStar;
 
   // render half star
-  if (value % 1 !== 0) {
-    if (Math.round(value) === Math.ceil(value)) starComponent += halfStar;
+  if (value % 1 !== 0 && Math.round(value) === Math.ceil(value)) {
+    starComponent += halfStar;
   }
 
   // render empty star
