@@ -1,5 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 module.exports = {
@@ -40,6 +42,32 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    new WebpackPwaManifest({
+      name: 'Luwe',
+      short_name: 'Luwe',
+      description: 'Catalog Restaurants',
+      theme_color: '#48811a',
+      background_color: '#ffffff',
+      start_url: '/',
+      orientation: 'portrait',
+      display: 'standalone',
+      inject: true,
+      ios: {
+        'apple-mobile-web-app-title': 'Luwe',
+        'apple-mobile-web-app-status-bar-style': '48811a',
+      },
+      icons: [
+        {
+          src: path.resolve('src/public/images/icons/icon.png'),
+          sizes: [72, 96, 128, 192, 256, 384, 512],
+        },
+        {
+          src: path.resolve('src/public/images/icons/ios-icon.png'),
+          size: 192,
+          ios: true,
         },
       ],
     }),
