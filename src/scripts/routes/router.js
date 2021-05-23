@@ -17,7 +17,8 @@ const router = (routeTable) => {
       }
     } catch (error) {
       main.innerHTML = errorPage();
-      console.log(error);
+      // eslint-disable-next-line no-console
+      console.error(error);
     }
   };
 
