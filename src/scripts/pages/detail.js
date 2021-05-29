@@ -2,7 +2,7 @@ import '../components/detail-restaurant';
 import apiService from '../services/api';
 
 const detail = async () => {
-  const idRestaurant = localStorage.getItem('idRestaurant');
+  const idRestaurant = window.location.hash.substring(13);
   const data = await apiService.detailRestaurant(idRestaurant);
 
   const detailRestaurant = document.createElement('detail-restaurant');

@@ -5,10 +5,22 @@ import favorite from '../pages/favorite';
 import detail from '../pages/detail';
 
 const routeTable = {
-  '': home,
-  '#/favorite': favorite,
-  '#/about': about,
-  '#/detail': detail,
+  '': {
+    page: home,
+    exact: true,
+  },
+  '#/favorite': {
+    page: favorite,
+    exact: true,
+  },
+  '#/about': {
+    page: about,
+    exact: true,
+  },
+  '#/restaurant': {
+    page: detail,
+    exact: false,
+  },
 };
 
 router(routeTable);
