@@ -45,8 +45,15 @@ list-restaurants {
       margin-top: 0.5rem;
       padding-left: 0.5rem;
       padding-right: 0.5rem;
-      .card-title {
-        font-weight: 600;
+      .detail-link {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: $primary-color;
+        }
+        .card-title {
+          font-weight: 600;
+        }
       }
       .rating span {
         font-size: 1rem;
