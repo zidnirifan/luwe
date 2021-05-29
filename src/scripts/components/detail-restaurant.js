@@ -8,7 +8,7 @@ import drinkIcon from '../../public/images/drink.svg';
 class DetailRestaurant extends HTMLElement {
   connectedCallback() {
     const readMoreBtn = this.querySelector('.read-more');
-    readMoreBtn.addEventListener('click', DetailRestaurant.readMore);
+    readMoreBtn.addEventListener('click', this._readMore);
   }
 
   set data(data) {
@@ -16,8 +16,8 @@ class DetailRestaurant extends HTMLElement {
     this.render();
   }
 
-  static readMore() {
-    const readMoreBtn = document.querySelector('.read-more');
+  _readMore() {
+    const readMoreBtn = this;
     const description = document.querySelector('.description');
     const isHide = description.classList.contains('hide');
 
