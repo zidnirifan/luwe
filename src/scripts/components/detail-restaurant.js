@@ -18,18 +18,13 @@ class DetailRestaurant extends HTMLElement {
 
   static readMore() {
     const readMoreBtn = document.querySelector('.read-more');
-    document.querySelector('.description').classList.remove('hide');
-    readMoreBtn.removeEventListener('click', DetailRestaurant.readMore);
-    readMoreBtn.addEventListener('click', DetailRestaurant.readLess);
-    readMoreBtn.innerText = 'Lihat lebih sedikit';
-  }
+    const description = document.querySelector('.description');
+    const isHide = description.classList.contains('hide');
 
-  static readLess() {
-    const readMoreBtn = document.querySelector('.read-more');
-    document.querySelector('.description').classList.add('hide');
-    readMoreBtn.removeEventListener('click', DetailRestaurant.readLess);
-    readMoreBtn.addEventListener('click', DetailRestaurant.readMore);
-    readMoreBtn.innerText = 'Lihat Selengkapnya';
+    description.classList.toggle('hide');
+    readMoreBtn.innerText = isHide
+      ? 'Lihat lebih sedikit'
+      : 'Lihat Selengkapnya';
   }
 
   render() {
