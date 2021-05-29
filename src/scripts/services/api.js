@@ -12,6 +12,17 @@ const apiService = {
       return error;
     }
   },
+  detailRestaurant: async (id) => {
+    try {
+      const response = await fetch(API_ENDPOINT.DETAIL(id));
+      const responseJson = response.json();
+      return responseJson;
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+      return error;
+    }
+  },
 };
 
 export default apiService;

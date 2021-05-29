@@ -5,6 +5,7 @@
 @use 'not-found';
 @use 'loading';
 @use 'error-page';
+@use 'detail';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -36,4 +37,9 @@ footer {
   &:focus {
     top: 0;
   }
+}
+
+.full-width {
+  margin-left: -5.55%;
+  margin-right: -5.55%;
 }
