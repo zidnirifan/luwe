@@ -5,7 +5,7 @@ class Hero extends HTMLElement {
 
   render() {
     this.innerHTML = /* html */ `
-            <div class="hero">
+            <div class="hero full-width">
                 <div className="hero-inner">
                     <h1 class="hero-title">Temukan Restoran Terbaikmu</h1>
                     <p class="hero-tagline">Manjakan perut laparmu dengan hidangan lezat dari restoran yang berkualitas</p>        
