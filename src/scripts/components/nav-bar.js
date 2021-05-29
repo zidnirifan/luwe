@@ -21,7 +21,9 @@ class Navbar extends HTMLElement {
   render() {
     this.innerHTML = /* html */ `
       <nav class="navbar">
-          <a href="/" class="logo"><img src="${logo}" alt="logo luwe"/></a>
+          <div class="logo">
+            <a href="#"><img src="${logo}" alt="logo luwe"/></a>
+          </div>
           <button class="menu-btn" aria-label="menu button">
               <span></span>
               <span></span>
