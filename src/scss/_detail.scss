@@ -12,8 +12,27 @@
 
   .address {
     margin-top: 5px;
-    img {
-      width: 25px;
+  }
+
+  .menu {
+    justify-content: center;
+    h4 {
+      display: inline;
+      font-size: 1.1rem;
+      margin-left: 5px;
+    }
+  }
+
+  .foods,
+  .drinks {
+    h5 {
+      font-size: 1rem;
+      display: inline;
+      margin-left: 5px;
+    }
+
+    ul {
+      margin-left: 20%;
     }
   }
 
