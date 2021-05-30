@@ -56,7 +56,9 @@ class DetailRestaurant extends HTMLElement {
         </div>
         <h4>Deskripsi: </h4>
         <p class="description hide">${this._data.description}</p>
-        <button class="read-more">Lihat selengkapnya</button>
+        <button class="read-more" aria-label="read more button">
+          Lihat selengkapnya
+        </button>
         <div class="menu vertical-center">
           <img src="${menuIcon}" alt="menu" class="icon"/>
           <h4>Menu</h4>
