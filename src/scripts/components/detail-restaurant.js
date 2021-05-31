@@ -36,10 +36,14 @@ class DetailRestaurant extends HTMLElement {
       (drink) => `<li>${drink.name}</li>`,
     );
 
+    const imageUrl = window.innerWidth > 500
+      ? CONFIG.BASE_IMAGE_URL_MEDIUM
+      : CONFIG.BASE_IMAGE_URL_SMALL;
+
     this.innerHTML = /* html */ `
       <div class="detail">
         <div class="detail-img">
-          <img src="${CONFIG.BASE_IMAGE_URL + this._data.pictureId}" 
+          <img src="${imageUrl + this._data.pictureId}" 
             alt="${this._data.name}"/>
         </div>
         <div class="detail-content">
