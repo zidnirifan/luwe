@@ -43,11 +43,6 @@ footer {
   }
 }
 
-.full-width {
-  margin-left: -5.55%;
-  margin-right: -5.55%;
-}
-
 .icon {
   width: 30px;
 }
@@ -55,4 +50,11 @@ footer {
 .vertical-center {
   display: flex;
   align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    width: 1080px;
+    margin: auto;
+  }
 }

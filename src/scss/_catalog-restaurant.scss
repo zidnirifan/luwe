@@ -98,10 +98,3 @@ list-restaurants {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
-@media screen and (min-width: 1200px) {
-  list-restaurants {
-    width: 1080px;
-    margin: auto;
-  }
-}

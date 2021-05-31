@@ -23,27 +23,30 @@
     position: fixed;
     z-index: 99;
     top: 0;
-    left: auto;
     padding: 10px;
     padding-top: 40px;
     background-color: white;
-    width: 90%;
     height: 100%;
     overflow: auto;
+    height: 80%;
     &.show {
       display: block;
     }
     .close-bar {
       position: fixed;
       top: 0;
-      left: 5%;
       background-color: white;
-      width: 90%;
       .close-btn {
         padding: 7px;
         display: inline-block;
         cursor: pointer;
       }
+    }
+    &,
+    .close-bar {
+      width: 90%;
+      left: 5%;
+      top: 10%;
     }
   }
   .overlay {
@@ -121,6 +124,47 @@ form.add-review {
     &.success {
       background-color: rgb(203, 253, 201);
       border-bottom: 3px solid $primary-color;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .reviews,
+  form.add-review {
+    width: 70%;
+    margin: 0 auto;
+  }
+  form.add-review {
+    margin-top: 30px;
+  }
+  .reviews {
+    .all-reviews {
+      &,
+      & .close-bar {
+        width: 70% !important;
+        left: 15%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .reviews {
+    width: 80%;
+    .title {
+      font-size: 1.3rem;
+    }
+    .list-reviews {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 25px;
+    }
+  }
+  form.add-review {
+    width: 40%;
+    margin: 30px auto;
+    .title {
+      font-size: 1.3rem;
     }
   }
 }

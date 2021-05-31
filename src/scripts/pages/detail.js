@@ -35,7 +35,9 @@ const detail = async () => {
     ${detailRestaurant.outerHTML}
     <div class="reviews">
       <h3 class="title">Review Pelanggan</h3>
-        ${listReviews.slice(0, 3).join('')}
+      <div class="list-reviews">
+        ${listReviews.slice(0, 4).join('')}
+      </div>
       <div class="button-container">
         <button onclick="(${showAllReviews})()" class="all-reviews-btn">
           Semua Review
@@ -47,7 +49,9 @@ const detail = async () => {
             <img class="icon" src="${closeIcon}" alt="close"/>
           </div>
         </div>
-        ${listReviews.join('')}
+        <div class="list-reviews">
+         ${listReviews.join('')}
+        </div>
       </div>
       <div class="overlay"></div>
     </div>

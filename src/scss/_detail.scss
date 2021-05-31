@@ -1,8 +1,12 @@
 @use 'variable' as *;
 
 .detail {
-  .detail-img img {
-    width: 100%;
+  .detail-img {
+    margin-left: -5.55%;
+    margin-right: -5.55%;
+    img {
+      width: 100%;
+    }
   }
 
   .categories .category {
@@ -12,28 +16,6 @@
 
   .address {
     margin-top: 5px;
-  }
-
-  .menu {
-    justify-content: center;
-    h4 {
-      display: inline;
-      font-size: 1.1rem;
-      margin-left: 5px;
-    }
-  }
-
-  .foods,
-  .drinks {
-    h5 {
-      font-size: 1rem;
-      display: inline;
-      margin-left: 5px;
-    }
-
-    ul {
-      margin-left: 20%;
-    }
   }
 
   .hide {
@@ -53,5 +35,64 @@
     border: none;
     color: $primary-color;
     cursor: pointer;
+  }
+}
+
+.menu-title {
+  justify-content: center;
+  h4 {
+    display: inline;
+    font-size: 1.1rem;
+    margin-left: 5px;
+  }
+}
+.menu {
+  .foods,
+  .drinks {
+    h5 {
+      font-size: 1rem;
+      display: inline;
+      margin-left: 5px;
+    }
+
+    ul {
+      margin-left: 20%;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    width: 70%;
+    margin: 20px auto;
+    .foods h5,
+    .drinks h5 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    .detail-img {
+      margin: 0;
+    }
+    .detail-content {
+      .title {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .menu-title {
+    margin-top: 20px;
+    h4 {
+      font-size: 1.3rem;
+    }
   }
 }
