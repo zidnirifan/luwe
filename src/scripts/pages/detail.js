@@ -1,5 +1,6 @@
 import '../components/detail-restaurant';
 import '../components/review-card';
+import '../components/form-review';
 import apiService from '../services/api';
 import closeIcon from '../../public/images/close.svg';
 
@@ -15,6 +16,8 @@ const detail = async () => {
     reviewCard.data = review;
     return reviewCard.outerHTML;
   });
+
+  const formReview = document.createElement('form-review');
 
   const showAllReviews = () => {
     document
@@ -48,6 +51,7 @@ const detail = async () => {
       </div>
       <div class="overlay"></div>
     </div>
+    ${formReview.outerHTML}
   `;
 };
 
