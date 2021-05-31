@@ -1,4 +1,5 @@
 import apiService from '../services/api';
+import './review-card';
 
 class FormReview extends HTMLElement {
   connectedCallback() {
@@ -32,8 +33,17 @@ class FormReview extends HTMLElement {
       const response = await apiService.addReview(data);
       if (response.error === false) {
         showFormInfo('Review berhasil ditambahkan', true);
-        document.querySelector('#name-reviewer').value = '';
-        document.querySelector('#review-text').value = '';
+
+        document
+          .querySelectorAll('#name-reviewer, #review-text')
+          .forEach((e) => {
+            e.value = '';
+          });
+
+        const lastIndex = response.customerReviews.length - 1;
+        const lastReview = document.createElement('review-card');
+        lastReview.data = response.customerReviews[lastIndex];
+        document.querySelector('.list-reviews').appendChild(lastReview);
       } else showFormInfo('Ups terjadi kesalahan', false);
     }
   }
