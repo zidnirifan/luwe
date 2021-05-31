@@ -53,7 +53,7 @@ const detail = async () => {
          ${listReviews.join('')}
         </div>
       </div>
-      <div class="overlay"></div>
+      <div class="overlay" onclick="(${closeAllReviews})()"></div>
     </div>
     ${formReview.outerHTML}
   `;
