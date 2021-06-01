@@ -40,3 +40,10 @@
     }
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    margin-left: calc(-100vw / 2 + 1095px / 2);
+    margin-right: calc(-100vw / 2 + 1095px / 2);
+  }
+}

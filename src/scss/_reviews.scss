@@ -126,7 +126,7 @@ form.add-review {
       &,
       & .close-bar {
         width: 70% !important;
-        left: 15%;
+        left: 15% !important;
       }
     }
   }
@@ -149,6 +149,18 @@ form.add-review {
     margin: 30px auto;
     .title {
       font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .reviews {
+    .all-reviews {
+      &,
+      & .close-bar {
+        width: 50% !important;
+        left: 25% !important;
+      }
     }
   }
 }
