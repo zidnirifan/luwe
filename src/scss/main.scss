@@ -8,6 +8,7 @@
 @use 'error-page';
 @use 'detail';
 @use 'reviews';
+@use 'like-button';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -50,6 +51,24 @@ footer {
 .vertical-center {
   display: flex;
   align-items: center;
+}
+
+.info {
+  text-align: center;
+  color: rgb(78, 78, 78);
+  font-weight: 500;
+  display: none;
+  &.show {
+    display: block;
+  }
+  &.error {
+    background-color: rgb(253, 201, 201);
+    border-bottom: 3px solid red;
+  }
+  &.success {
+    background-color: rgb(203, 253, 201);
+    border-bottom: 3px solid $primary-color;
+  }
 }
 
 @media screen and (min-width: 1200px) {

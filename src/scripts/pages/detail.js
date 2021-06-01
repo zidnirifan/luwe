@@ -1,10 +1,9 @@
 import '../components/detail-restaurant';
 import '../components/review-card';
 import '../components/form-review';
+import '../components/like-button';
 import apiService from '../services/api';
 import closeIcon from '../../public/images/close.svg';
-import likeIcon from '../../public/images/like.svg';
-import likedIcon from '../../public/images/liked.svg';
 
 const detail = async () => {
   const idRestaurant = window.location.hash.substring(13);
@@ -18,6 +17,9 @@ const detail = async () => {
     reviewCard.data = review;
     return reviewCard.outerHTML;
   });
+
+  const likeButton = document.createElement('like-button');
+  likeButton.data = data.restaurant;
 
   const formReview = document.createElement('form-review');
 
@@ -58,9 +60,7 @@ const detail = async () => {
       <div class="overlay" onclick="(${closeAllReviews})()"></div>
     </div>
     ${formReview.outerHTML}
-    <div class="like-button vertical-center">
-      <img src="${likeIcon}" alt="Like button" class="like-icon"/>
-    </div>
+    ${likeButton.outerHTML}
   `;
 };
 

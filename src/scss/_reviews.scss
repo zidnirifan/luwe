@@ -108,22 +108,7 @@ form.add-review {
     cursor: pointer;
   }
   .submit-info {
-    text-align: center;
-    color: rgb(78, 78, 78);
-    font-weight: 500;
     padding: 5px;
-    display: none;
-    &.show {
-      display: block;
-    }
-    &.error {
-      background-color: rgb(253, 201, 201);
-      border-bottom: 3px solid red;
-    }
-    &.success {
-      background-color: rgb(203, 253, 201);
-      border-bottom: 3px solid $primary-color;
-    }
   }
 }
 
