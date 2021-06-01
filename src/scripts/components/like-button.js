@@ -55,6 +55,7 @@ class LikeButton extends HTMLElement {
       this.showLikeInfo('Berhasil Ditambahkan ke Favorite', true);
     } catch (error) {
       this.showLikeInfo('Upss terjadi kesalahan', false);
+      // eslint-disable-next-line no-console
       console.error(error);
     }
   }
@@ -66,6 +67,7 @@ class LikeButton extends HTMLElement {
       this.showLikeInfo('Berhasil Dihapus dari Favorite', true);
     } catch (error) {
       this.showLikeInfo('Upss terjadi kesalahan', false);
+      // eslint-disable-next-line no-console
       console.error(error);
     }
   }
