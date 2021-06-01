@@ -57,7 +57,7 @@ const detail = async () => {
          ${listReviews.join('')}
         </div>
       </div>
-      <div class="overlay" onclick="(${closeAllReviews})()"></div>
+      <div class="overlay" onclick="(${closeAllReviews})()" aria-label="close all-reviews"></div>
     </div>
     ${formReview.outerHTML}
     ${likeButton.outerHTML}

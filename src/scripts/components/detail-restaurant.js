@@ -61,9 +61,7 @@ class DetailRestaurant extends HTMLElement {
           </div>
           <h4>Deskripsi: </h4>
           <p class="description hide">${this._data.description}</p>
-          <button class="read-more" aria-label="read more button">
-            Lihat selengkapnya
-          </button>
+          <button class="read-more">Lihat selengkapnya</button>
         </div>
       </div>
       <div class="menu-title vertical-center">
