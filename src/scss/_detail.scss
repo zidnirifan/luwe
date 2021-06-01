@@ -61,6 +61,23 @@
   }
 }
 
+.like-button {
+  background-color: red;
+  border-radius: 50%;
+  padding: 10px;
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  right: 5%;
+  bottom: 3%;
+  cursor: pointer;
+  .like-icon {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .menu {
     display: grid;
@@ -94,5 +111,8 @@
     h4 {
       font-size: 1.3rem;
     }
+  }
+  .like-button {
+    bottom: 5%;
   }
 }
