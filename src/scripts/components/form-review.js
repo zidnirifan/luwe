@@ -31,7 +31,7 @@ class FormReview extends HTMLElement {
     else {
       const data = JSON.stringify({ id, name, review });
       const response = await apiService.addReview(data);
-      if (response.error === false) {
+      if (!response.error) {
         showFormInfo('Review berhasil ditambahkan', true);
 
         document
