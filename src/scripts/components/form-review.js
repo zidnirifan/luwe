@@ -57,7 +57,7 @@ class FormReview extends HTMLElement {
         <label for="review-text">Review</label><br />
         <textarea id="review-text" rows="5" placeholder="Reviewmu"></textarea><br />
         <div class="submit-info info"></div>
-        <button class="submit-btn">Submit</button>
+        <button type="button" class="submit-btn">Submit</button>
       </form>
     `;
   }
