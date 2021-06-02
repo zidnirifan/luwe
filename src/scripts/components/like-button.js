@@ -50,7 +50,17 @@ class LikeButton extends HTMLElement {
 
   async likeRestaurant() {
     try {
-      await favoriteRestaurantIdb.putRestaurant(LikeButton.data);
+      // eslint-disable-next-line object-curly-newline
+      const { id, city, description, name, pictureId, rating } = LikeButton.data;
+      const data = {
+        id,
+        city,
+        description,
+        name,
+        pictureId,
+        rating,
+      };
+      await favoriteRestaurantIdb.putRestaurant(data);
       this.renderLiked();
       this.showLikeInfo('Berhasil Ditambahkan ke Favorite', true);
     } catch (error) {
