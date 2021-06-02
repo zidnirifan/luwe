@@ -8,14 +8,18 @@ const favorite = async () => {
   listRestaurants.data = data;
 
   let sectionTitle = 'Restoran Favorit';
+  let height = null;
 
   if (listRestaurants.innerHTML === '') {
     sectionTitle = 'Belum ada restoran favorit';
+    height = window.innerHeight - 130;
   }
 
   return /* html */ `
-  <h2 class="section-title">${sectionTitle}</h2>
-    ${listRestaurants.outerHTML}
+  <div class="favorite-page" style="height: ${height}px;">
+    <h2 class="section-title">${sectionTitle}</h2>
+      ${listRestaurants.outerHTML}
+  </div>
   `;
 };
 
