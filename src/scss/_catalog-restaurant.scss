@@ -64,6 +64,10 @@ list-restaurants {
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
+          -moz-line-clamp: 1;
+          -moz-box-orient: vertical;
+          -ms-line-clamp: 1;
+          -ms-box-orient: vertical;
         }
       }
       .rating span {
@@ -76,6 +80,10 @@ list-restaurants {
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        -moz-line-clamp: 2;
+        -moz-box-orient: vertical;
+        -ms-line-clamp: 2;
+        -ms-box-orient: vertical;
       }
     }
   }
