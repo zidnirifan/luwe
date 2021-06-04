@@ -7,32 +7,22 @@ class FormReview extends HTMLElement {
 
     this.querySelector('.submit-btn').addEventListener(
       'click',
-      FormReview.submitReview,
+      () => this.submitReview(),
     );
   }
 
-  static async submitReview() {
-    const name = document.querySelector('#name-reviewer').value;
-    const review = document.querySelector('#review-text').value;
+  async submitReview() {
+    const name = this.querySelector('#name-reviewer').value;
+    const review = this.querySelector('#review-text').value;
     const id = window.location.hash.substring(13);
-    const formInfo = document.querySelector('.submit-info');
 
-    const showFormInfo = (text, isSucess) => {
-      formInfo.innerText = text;
-      const className = formInfo.classList;
-      if (!className.contains('show')) className.add('show');
-      if (className.contains('success')) className.remove('success');
-      if (className.contains('error')) className.remove('error');
-      className.add(isSucess ? 'success' : 'error');
-    };
-
-    if (name === '') showFormInfo('Mohon isi kolom nama', false);
-    else if (review === '') showFormInfo('Mohon isi kolom review', false);
+    if (name === '') this.showFormInfo('Mohon isi kolom nama', false);
+    else if (review === '') this.showFormInfo('Mohon isi kolom review', false);
     else {
       const data = JSON.stringify({ id, name, review });
       const response = await apiService.addReview(data);
       if (!response.error) {
-        showFormInfo('Review berhasil ditambahkan', true);
+        this.showFormInfo('Review berhasil ditambahkan', true);
 
         document
           .querySelectorAll('#name-reviewer, #review-text')
@@ -44,8 +34,18 @@ class FormReview extends HTMLElement {
         const lastReview = document.createElement('review-card');
         lastReview.data = response.customerReviews[lastIndex];
         document.querySelector('.list-reviews').appendChild(lastReview);
-      } else showFormInfo('Ups terjadi kesalahan', false);
+      } else this.showFormInfo('Ups terjadi kesalahan', false);
     }
+  }
+
+  showFormInfo(text, isSucess) {
+    const formInfo = this.querySelector('.submit-info');
+    formInfo.innerText = text;
+    const className = formInfo.classList;
+    if (!className.contains('show')) className.add('show');
+    if (className.contains('success')) className.remove('success');
+    if (className.contains('error')) className.remove('error');
+    className.add(isSucess ? 'success' : 'error');
   }
 
   render() {
