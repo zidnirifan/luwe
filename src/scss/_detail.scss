@@ -9,10 +9,15 @@
     }
   }
 
-  .categories .category {
-    background-color: #d3d3d6;
-    padding: 2px 7px;
-  }
+  .categories {
+    .title-category {
+      font-weight: 500;
+    }
+    .category {
+      background-color: #d3d3d6;
+      padding: 2px 7px;
+    }
+  } 
 
   .address {
     margin-top: 5px;

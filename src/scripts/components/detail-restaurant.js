@@ -53,6 +53,7 @@ class DetailRestaurant extends HTMLElement {
             <span> ${this._data.rating}</span>
           </div>
           <div class="categories">
+            <span class="title-category">Category: </span>
             ${categories.join(' ')}
           </div>
           <div class="address vertical-center">
