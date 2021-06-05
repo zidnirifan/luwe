@@ -15,6 +15,8 @@ const router = (routeTable) => {
 
     const loadContent = async () => {
       try {
+        // to save curren url into local storage
+        localStorage.setItem('currentUrl', hash);
         main.innerHTML = loading();
         main.innerHTML = await routeTable[url].page();
       } catch (error) {
@@ -24,7 +26,9 @@ const router = (routeTable) => {
       }
     };
 
-    if (routeTable[url] === undefined) main.innerHTML = notFound();
+    // to avoid 404 page when skip link clicked
+    if (hash === '#main') main.scrollIntoView();
+    else if (routeTable[url] === undefined) main.innerHTML = notFound();
     else if (routeTable[url].exact && hash === url) loadContent();
     else if (!routeTable[url].exact && hash.includes(url)) loadContent();
     else main.innerHTML = notFound();
@@ -33,8 +37,11 @@ const router = (routeTable) => {
   window.addEventListener('hashchange', () => {
     loadPage();
   });
-  document.addEventListener('DOMContentLoaded', () => {
-    loadPage();
+  document.addEventListener('DOMContentLoaded', async () => {
+    // to avoid error if refresh when hash url = #main
+    if (window.location.hash === '#main') {
+      window.location.hash = localStorage.getItem('currentUrl');
+    } else loadPage();
   });
 };
 
