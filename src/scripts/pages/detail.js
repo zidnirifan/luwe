@@ -49,7 +49,7 @@ const detail = async () => {
       </div>
       <div class="all-reviews">
         <div class="close-bar">
-          <div class="close-btn" onclick="(${closeAllReviews})()" aria-label="close button">
+          <div class="close-btn" onclick="(${closeAllReviews})()" aria-label="Tutup semua review">
             <img class="icon" src="${closeIcon}" alt="close"/>
           </div>
         </div>
@@ -57,7 +57,7 @@ const detail = async () => {
          ${listReviews.join('')}
         </div>
       </div>
-      <div class="overlay" onclick="(${closeAllReviews})()" aria-label="close all-reviews"></div>
+      <div class="overlay" onclick="(${closeAllReviews})()" aria-label="Tutup semua review"></div>
     </div>
     ${formReview.outerHTML}
     ${likeButton.outerHTML}

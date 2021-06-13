@@ -86,7 +86,7 @@ class LikeButton extends HTMLElement {
 
   render() {
     this.classList = 'like-button vertical-center';
-    this.setAttribute('aria-label', 'Like Button');
+    this.setAttribute('aria-label', 'Sukai restoran ini');
 
     this.innerHTML = /* html */ `
         <img src="${likeIcon}" alt="Like button" class="like-icon"/>

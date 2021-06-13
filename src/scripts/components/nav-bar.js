@@ -24,7 +24,7 @@ class Navbar extends HTMLElement {
           <div class="logo">
             <a href="#"><img src="${logo}" alt="logo luwe"/></a>
           </div>
-          <button class="menu-btn" aria-label="menu button">
+          <button class="menu-btn" aria-label="Tombol menu">
               <span></span>
               <span></span>
               <span></span>
