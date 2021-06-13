@@ -95,7 +95,7 @@ class LikeButton extends HTMLElement {
 
     this.innerHTML = /* html */ `
         <img src="${likeIcon}" alt="Like button" class="like-icon"/>
-        <div class="info like-info success"></div>
+        <div class="info like-info"></div>
     `;
   }
 }
