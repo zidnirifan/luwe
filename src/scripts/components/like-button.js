@@ -1,6 +1,6 @@
 import favoriteRestaurantIdb from '../services/idb';
 import likeIcon from '../../public/images/like.svg';
-import likedIcon from '../../public/images/liked.svg';
+import unLikeIcon from '../../public/images/liked.svg';
 import showInfo from '../utils/showInfo';
 
 class LikeButton extends HTMLElement {
@@ -16,7 +16,7 @@ class LikeButton extends HTMLElement {
 
   async renderButton() {
     if (await LikeButton.isRestaurantExist()) {
-      this.renderLiked();
+      this.renderUnlike();
     } else {
       this.renderLike();
     }
@@ -30,11 +30,13 @@ class LikeButton extends HTMLElement {
   renderLike() {
     this.firstElementChild.src = likeIcon;
     this.classList.remove('liked');
+    this.setAttribute('aria-label', 'Tambahkan ke favorit');
   }
 
-  renderLiked() {
-    this.firstElementChild.src = likedIcon;
+  renderUnlike() {
+    this.firstElementChild.src = unLikeIcon;
     this.classList.add('liked');
+    this.setAttribute('aria-label', 'Hapus dari favorit');
   }
 
   showLikeInfo(text, isSucess) {
@@ -56,7 +58,7 @@ class LikeButton extends HTMLElement {
         rating,
       };
       await favoriteRestaurantIdb.putRestaurant(data);
-      this.renderLiked();
+      this.renderUnlike();
       this.showLikeInfo('Berhasil Ditambahkan ke Favorite', true);
     } catch (error) {
       this.showLikeInfo('Upss terjadi kesalahan', false);
@@ -86,7 +88,6 @@ class LikeButton extends HTMLElement {
 
   render() {
     this.classList = 'like-button vertical-center';
-    this.setAttribute('aria-label', 'Sukai restoran ini');
 
     this.innerHTML = /* html */ `
         <img src="${likeIcon}" alt="Like button" class="like-icon"/>
