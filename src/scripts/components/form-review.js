@@ -1,3 +1,4 @@
+import showInfo from '../utils/showInfo';
 import apiService from '../services/api';
 import './review-card';
 
@@ -39,13 +40,7 @@ class FormReview extends HTMLElement {
   }
 
   showFormInfo(text, isSucess) {
-    const formInfo = this.querySelector('.submit-info');
-    formInfo.innerText = text;
-    const className = formInfo.classList;
-    if (!className.contains('show')) className.add('show');
-    if (className.contains('success')) className.remove('success');
-    if (className.contains('error')) className.remove('error');
-    className.add(isSucess ? 'success' : 'error');
+    showInfo(this.querySelector('.submit-info'), text, isSucess);
   }
 
   render() {

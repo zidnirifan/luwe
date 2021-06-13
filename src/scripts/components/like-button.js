@@ -1,6 +1,7 @@
 import favoriteRestaurantIdb from '../services/idb';
 import likeIcon from '../../public/images/like.svg';
 import likedIcon from '../../public/images/liked.svg';
+import showInfo from '../utils/showInfo';
 
 class LikeButton extends HTMLElement {
   connectedCallback() {
@@ -38,14 +39,8 @@ class LikeButton extends HTMLElement {
 
   showLikeInfo(text, isSucess) {
     const likeInfo = this.querySelector('.like-info');
-
-    likeInfo.innerText = text;
-    const className = likeInfo.classList;
-    if (!className.contains('show')) className.add('show');
-    if (className.contains('success')) className.remove('success');
-    if (className.contains('error')) className.remove('error');
-    className.add(isSucess ? 'success' : 'error');
-    setTimeout(() => className.remove('show'), 1500);
+    showInfo(likeInfo, text, isSucess);
+    setTimeout(() => likeInfo.classList.remove('show'), 1500);
   }
 
   async likeRestaurant() {
