@@ -7,11 +7,13 @@ class LikeButton extends HTMLElement {
   connectedCallback() {
     this.renderButton();
 
-    this.addEventListener('click', async () => {
-      if (this.classList.contains('liked')) {
-        await this.deleteRestaurant();
-      } else await this.likeRestaurant();
-    });
+    if (LikeButton.data.id !== undefined) {
+      this.addEventListener('click', async () => {
+        if (this.classList.contains('liked')) {
+          await this.deleteRestaurant();
+        } else await this.likeRestaurant();
+      });
+    }
   }
 
   async renderButton() {
@@ -80,6 +82,8 @@ class LikeButton extends HTMLElement {
   }
 
   static async isRestaurantExist() {
+    if (LikeButton.data.id === undefined) return false;
+
     const restaurant = await favoriteRestaurantIdb.getRestaurant(
       LikeButton.data.id,
     );
