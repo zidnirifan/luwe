@@ -18,11 +18,11 @@ describe('Liking a restaurant', () => {
     document.body.innerHTML = likeButton.outerHTML;
   });
 
-  it('should show the like button when the restaurant has not been liked before', async () => {
+  it('should show the like button when the restaurant has not been liked before', () => {
     expect(document.querySelector('like-button')).toBeTruthy();
   });
 
-  it('should not show the unlike button when the restaurant has not been liked before', async () => {
+  it('should not show the unlike button when the restaurant has not been liked before', () => {
     expect(document.querySelector('like-button.liked')).toBeFalsy();
   });
 
