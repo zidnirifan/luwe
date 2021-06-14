@@ -9,7 +9,7 @@ describe('Liking a restaurant', () => {
     city: 'p',
     description: 'p',
     name: 'p',
-    pictureId: 'p',
+    pictureId: '1',
     rating: 'p',
   };
 
@@ -19,11 +19,11 @@ describe('Liking a restaurant', () => {
   });
 
   it('should show the like button when the restaurant has not been liked before', () => {
-    expect(document.querySelector('like-button')).toBeTruthy();
+    expect(document.getElementById('like-button')).toBeTruthy();
   });
 
   it('should not show the unlike button when the restaurant has not been liked before', () => {
-    expect(document.querySelector('like-button.liked')).toBeFalsy();
+    expect(document.getElementById('unlike-button')).toBeFalsy();
   });
 
   it('should be able to like the restaurant', async () => {

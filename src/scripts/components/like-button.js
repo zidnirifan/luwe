@@ -33,12 +33,14 @@ class LikeButton extends HTMLElement {
     this.firstElementChild.src = likeIcon;
     this.classList.remove('liked');
     this.setAttribute('aria-label', 'Tambahkan ke favorit');
+    this.id = 'like-button';
   }
 
   renderUnlike() {
     this.firstElementChild.src = unLikeIcon;
     this.classList.add('liked');
     this.setAttribute('aria-label', 'Hapus dari favorit');
+    this.id = 'unlike-button';
   }
 
   showLikeInfo(text, isSucess) {
@@ -92,6 +94,7 @@ class LikeButton extends HTMLElement {
 
   render() {
     this.classList = 'like-button vertical-center';
+    this.id = 'like-button';
 
     this.innerHTML = /* html */ `
         <img src="${likeIcon}" alt="Like button" class="like-icon"/>

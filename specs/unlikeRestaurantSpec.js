@@ -6,7 +6,7 @@ const dataRestaurant = {
   city: 'p',
   description: 'p',
   name: 'p',
-  pictureId: 'p',
+  pictureId: '1',
   rating: 'p',
 };
 
@@ -24,13 +24,13 @@ describe('Unliking A Restaurant', () => {
 
   it('should display unlike widget when the movie has been liked', () => {
     setTimeout(() => {
-      expect(document.querySelector('[aria-label="Hapus dari favorit"]')).toBeTruthy();
+      expect(document.getElementById('unlike-button')).toBeTruthy();
     }, 50);
   });
 
   it('should not display like widget when the movie has been liked', () => {
     setTimeout(() => {
-      expect(document.querySelector('[aria-label="Tambahkan ke favorit"]')).toBeFalsy();
+      expect(document.getElementById('like-button')).toBeFalsy();
     }, 50);
   });
 
@@ -42,7 +42,7 @@ describe('Unliking A Restaurant', () => {
     }, 50);
   });
 
-  it('should not throw error if the unliked movie is not in the list', async () => {
+  it('should not throw error if the unliked movie is not in the list', () => {
     setTimeout(async () => {
       await favoriteRestaurantIdb.deleteRestaurant(1);
 
