@@ -26,8 +26,6 @@ describe('Unliking A Restaurant', () => {
   });
 
   it('should display unlike widget when the movie has been liked', async () => {
-    // console.log(await favoriteRestaurantIdb.getRestaurant(1));
-
     expect(document.getElementById('unlike-button')).toBeTruthy();
   });
 
