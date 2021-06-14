@@ -100,6 +100,8 @@ class LikeButton extends HTMLElement {
         <img src="${likeIcon}" alt="Like button" class="like-icon"/>
         <div class="info like-info"></div>
     `;
+
+    this.renderButton();
   }
 }
 

@@ -12,9 +12,12 @@ const dataRestaurant = {
 
 describe('Unliking A Restaurant', () => {
   beforeEach(async () => {
-    await favoriteRestaurantIdb.putRestaurant(dataRestaurant);
     const likeButton = document.createElement('like-button');
+    await favoriteRestaurantIdb.putRestaurant(dataRestaurant);
     likeButton.data = dataRestaurant;
+
+    await favoriteRestaurantIdb.getRestaurant(1);
+
     document.body.innerHTML = likeButton.outerHTML;
   });
 
@@ -22,33 +25,27 @@ describe('Unliking A Restaurant', () => {
     await favoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  it('should display unlike widget when the movie has been liked', () => {
-    setTimeout(() => {
-      expect(document.getElementById('unlike-button')).toBeTruthy();
-    }, 50);
+  it('should display unlike widget when the movie has been liked', async () => {
+    // console.log(await favoriteRestaurantIdb.getRestaurant(1));
+
+    expect(document.getElementById('unlike-button')).toBeTruthy();
   });
 
-  it('should not display like widget when the movie has been liked', () => {
-    setTimeout(() => {
-      expect(document.getElementById('like-button')).toBeFalsy();
-    }, 50);
+  it('should not display like widget when the movie has been liked', async () => {
+    expect(document.getElementById('like-button')).toBeFalsy();
   });
 
-  it('should be able to remove liked movie from the list', () => {
-    setTimeout(async () => {
-      document.querySelector('like-button').dispatchEvent(new Event('click'));
+  it('should be able to remove liked movie from the list', async () => {
+    document.querySelector('like-button').dispatchEvent(new Event('click'));
 
-      expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
-    }, 50);
+    expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
 
-  it('should not throw error if the unliked movie is not in the list', () => {
-    setTimeout(async () => {
-      await favoriteRestaurantIdb.deleteRestaurant(1);
+  it('should not throw error if the unliked movie is not in the list', async () => {
+    await favoriteRestaurantIdb.deleteRestaurant(1);
 
-      document.querySelector('like-button').dispatchEvent(new Event('click'));
+    document.querySelector('like-button').dispatchEvent(new Event('click'));
 
-      expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
-    });
+    expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
 });
