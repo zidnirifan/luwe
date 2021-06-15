@@ -14,7 +14,8 @@ class RestaurantCard extends HTMLElement {
               <a href="#/restaurant/${this._restaurant.id}" class="detail-link" 
                 data-id="${this._restaurant.id}">
                 <img 
-                  src="
+                  class="lazyload"
+                  data-src="
                     ${CONFIG.BASE_IMAGE_URL_SMALL + this._restaurant.pictureId}
                     " 
                   alt="${this._restaurant.name}"
