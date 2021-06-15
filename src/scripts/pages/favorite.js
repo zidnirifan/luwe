@@ -9,15 +9,19 @@ const favorite = async () => {
 
   let sectionTitle = 'Restoran Favorit';
   let height = null;
+  let isEmpty = false;
 
   if (listRestaurants.innerHTML === '') {
     sectionTitle = 'Belum ada restoran favorit';
+    isEmpty = true;
     height = window.innerHeight - 130;
   }
 
   return /* html */ `
   <div class="favorite-page" style="height: ${height}px;">
-    <h2 class="section-title">${sectionTitle}</h2>
+    <h2 class="section-title ${isEmpty ? 'empty-favorite' : 'favorites'}">
+      ${sectionTitle}
+    </h2>
       ${listRestaurants.outerHTML}
   </div>
   `;
