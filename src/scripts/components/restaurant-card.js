@@ -1,5 +1,6 @@
 import createStar from '../elements/star';
 import CONFIG from '../global/config';
+import placeholder from '../../public/images/placeholder.svg';
 
 class RestaurantCard extends HTMLElement {
   set restaurant(restaurant) {
@@ -15,6 +16,7 @@ class RestaurantCard extends HTMLElement {
                 data-id="${this._restaurant.id}">
                 <img 
                   class="lazyload"
+                  src="${placeholder}"
                   data-src="
                     ${CONFIG.BASE_IMAGE_URL_SMALL + this._restaurant.pictureId}
                     " 
