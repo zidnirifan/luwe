@@ -21,7 +21,7 @@ target.forEach((image) => {
     );
 
   sharp(hero)
-    .resize(480)
+    .resize(400)
     .toFile(
       path.resolve(
         __dirname,
