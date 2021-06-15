@@ -19,6 +19,8 @@ const router = (routeTable) => {
         localStorage.setItem('currentUrl', hash);
         main.innerHTML = loading();
         main.innerHTML = await routeTable[url].page();
+        document.getElementById('footer')
+          .innerHTML = '<footer>Copyright © 2021 - Luwe</footer>';
       } catch (error) {
         main.innerHTML = errorPage();
         // eslint-disable-next-line no-console
