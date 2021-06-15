@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path');
+const fs = require('fs');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -28,6 +29,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
+        exclude: [/hero-image\.png$/],
         use: ['file-loader'],
       },
     ],
@@ -41,6 +43,17 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'),
+          // To exclude hero-image.jpg
+          filter: async (resourcePath) => {
+            const data = await fs.promises.readFile(resourcePath);
+            const content = data.toString();
+
+            if (content === 'images/hero-image.jpg') {
+              return true;
+            }
+
+            return false;
+          },
           to: path.resolve(__dirname, 'dist/'),
         },
       ],

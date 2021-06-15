@@ -7,7 +7,10 @@
   padding-top: 20px;
   // background-image: url("../public/images/hero-image.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('../public/images/hero-image.jpg');
+    url('../public/images/responsive/hero-image-small.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   margin-left: -5.55%;
   margin-right: -5.55%;
@@ -32,6 +35,11 @@
 
 @media screen and (min-width: 768px) {
   .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../public/images/responsive/hero-image-large.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     &-title {
       font-size: 2.6rem;
     }
