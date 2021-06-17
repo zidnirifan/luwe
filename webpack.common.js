@@ -1,4 +1,3 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path');
@@ -17,25 +16,13 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[hash].[ext]',
-            outputPath: 'imgs',
+            outputPath: 'images',
           },
         },
       },
     ],
   },
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/public/'),
-          // To exclude hero-image.jpg
-          globOptions: {
-            ignore: [path.resolve(__dirname, 'src/public/images/hero-image.jpg')],
-          },
-          to: path.resolve(__dirname, 'dist/'),
-        },
-      ],
-    }),
     new WebpackPwaManifest({
       name: 'Luwe',
       short_name: 'Luwe',
