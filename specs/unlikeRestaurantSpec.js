@@ -26,11 +26,11 @@ describe('Unliking A Restaurant', () => {
     await favoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  it('should display unlike widget when the restaurant has been liked', async () => {
+  it('should display unlike widget when the restaurant has been liked', () => {
     expect(document.getElementById('unlike-button')).toBeTruthy();
   });
 
-  it('should not display like widget when the restaurant has been liked', async () => {
+  it('should not display like widget when the restaurant has been liked', () => {
     expect(document.getElementById('like-button')).toBeFalsy();
   });
 
