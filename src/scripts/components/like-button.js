@@ -5,6 +5,8 @@ import showInfo from '../utils/showInfo';
 
 class LikeButton extends HTMLElement {
   connectedCallback() {
+    this.renderButton();
+
     if (LikeButton.data.id !== undefined) {
       this.addEventListener('click', async () => {
         if (this.classList.contains('liked')) {
