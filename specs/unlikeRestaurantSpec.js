@@ -16,6 +16,7 @@ describe('Unliking A Restaurant', () => {
     await favoriteRestaurantIdb.putRestaurant(dataRestaurant);
     likeButton.data = dataRestaurant;
 
+    // Kode ini hanya untuk menunggu unlike-button selesai dirender
     await favoriteRestaurantIdb.getRestaurant(1);
 
     document.body.innerHTML = likeButton.outerHTML;
@@ -34,7 +35,7 @@ describe('Unliking A Restaurant', () => {
   });
 
   it('should be able to remove liked movie from the list', async () => {
-    document.querySelector('like-button').dispatchEvent(new Event('click'));
+    document.getElementById('unlike-button').dispatchEvent(new Event('click'));
 
     expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });
@@ -42,7 +43,7 @@ describe('Unliking A Restaurant', () => {
   it('should not throw error if the unliked movie is not in the list', async () => {
     await favoriteRestaurantIdb.deleteRestaurant(1);
 
-    document.querySelector('like-button').dispatchEvent(new Event('click'));
+    document.getElementById('unlike-button').dispatchEvent(new Event('click'));
 
     expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });

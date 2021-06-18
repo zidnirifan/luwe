@@ -3,7 +3,6 @@ import '../src/scripts/components/like-button';
 import favoriteRestaurantIdb from '../src/scripts/services/idb';
 
 describe('Liking a restaurant', () => {
-  const likeButton = document.createElement('like-button');
   const dataRestaurant = {
     id: 1,
     city: 'p',
@@ -13,8 +12,13 @@ describe('Liking a restaurant', () => {
     rating: 'p',
   };
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    const likeButton = document.createElement('like-button');
     likeButton.data = dataRestaurant;
+
+    // Kode ini hanya untuk menunggu like-button selesai dirender
+    await favoriteRestaurantIdb.getRestaurant(1);
+
     document.body.innerHTML = likeButton.outerHTML;
   });
 
@@ -27,7 +31,7 @@ describe('Liking a restaurant', () => {
   });
 
   it('should be able to like the restaurant', async () => {
-    document.querySelector('like-button').dispatchEvent(new Event('click'));
+    document.getElementById('like-button').dispatchEvent(new Event('click'));
     const restaurant = await favoriteRestaurantIdb.getRestaurant(1);
 
     expect(restaurant).toEqual(dataRestaurant);
@@ -37,7 +41,7 @@ describe('Liking a restaurant', () => {
 
   it('should not add a restaurant again when its already liked', async () => {
     await favoriteRestaurantIdb.putRestaurant(dataRestaurant);
-    document.querySelector('like-button').dispatchEvent(new Event('click'));
+    document.getElementById('like-button').dispatchEvent(new Event('click'));
     expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([dataRestaurant]);
 
     favoriteRestaurantIdb.deleteRestaurant(1);
@@ -46,9 +50,13 @@ describe('Liking a restaurant', () => {
   it('should not add a restaurant when it has no id', async () => {
     const newLikeButton = document.createElement('like-button');
     newLikeButton.data = {};
+
+    // Kode ini hanya untuk menunggu like-button selesai dirender
+    await favoriteRestaurantIdb.getRestaurant(1);
+
     document.body.innerHTML = newLikeButton.outerHTML;
 
-    document.querySelector('like-button').dispatchEvent(new Event('click'));
+    document.getElementById('like-button').dispatchEvent(new Event('click'));
 
     expect(await favoriteRestaurantIdb.getAllRestaurants()).toEqual([]);
   });

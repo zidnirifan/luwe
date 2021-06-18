@@ -5,8 +5,6 @@ import showInfo from '../utils/showInfo';
 
 class LikeButton extends HTMLElement {
   connectedCallback() {
-    this.renderButton();
-
     if (LikeButton.data.id !== undefined) {
       this.addEventListener('click', async () => {
         if (this.classList.contains('liked')) {
@@ -86,15 +84,12 @@ class LikeButton extends HTMLElement {
   static async isRestaurantExist() {
     if (LikeButton.data.id === undefined) return false;
 
-    const restaurant = await favoriteRestaurantIdb.getRestaurant(
-      LikeButton.data.id,
-    );
+    const restaurant = await favoriteRestaurantIdb.getRestaurant(LikeButton.data.id);
     return !!restaurant;
   }
 
   render() {
     this.classList = 'like-button vertical-center';
-    this.id = 'like-button';
 
     this.innerHTML = /* html */ `
         <img src="${likeIcon}" alt="Like button" class="like-icon"/>
