@@ -1,4 +1,5 @@
 import API_ENDPOINT from '../global/api-endpoint';
+import CONFIG from '../global/config';
 
 const apiService = {
   listRestaurants: async () => {
@@ -29,7 +30,7 @@ const apiService = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-Auth-Token': '12345',
+          'X-Auth-Token': CONFIG.KEY_POST_REVIEW,
         },
         body: data,
       });
