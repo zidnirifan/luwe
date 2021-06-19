@@ -47,6 +47,11 @@ module.exports = {
           size: 192,
           ios: true,
         },
+        {
+          src: path.resolve(__dirname, 'src/public/images/icons/maskable-icon.png'),
+          size: 512,
+          purpose: 'maskable',
+        },
       ],
     }),
     new InjectManifest({
